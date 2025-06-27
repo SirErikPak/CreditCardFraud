@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+# ignore other files that may be created by Python
+Data/
+.DS_Store
 
 # C extensions
 *.so
