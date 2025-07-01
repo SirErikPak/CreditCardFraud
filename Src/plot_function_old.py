@@ -191,46 +191,119 @@ def plot_distribution(data, x_col, hue_col, log_scale=True, bins=50):
 
 
 
-def plot_violin_by_binary_category(data, binary_col, numeric_col, title=None, palette='pastel'):
+def plot_violin_by_binary_category(data, binary_col, numeric_col, title = None, palette = 'pastel',
+                                   x_labels = None, show_quartiles = True):
     """
-    Plots a violin plot showing the distribution of a numerical variable 
+    Plots a violin plot showing the distribution of a numerical variable
     by a binary categorical variable (e.g., 0/1 or 'No'/'Yes').
 
     Parameters:
-    - df: DataFrame containing the data
-    - binary_col: Name of the binary categorical column (e.g., 'is_fraud')
-    - numeric_col: Name of the numeric column to visualize
-    - title: Optional title for the plot
-    - palette: Color palette for the violin plot
+    - data (pd.DataFrame): DataFrame containing the data.
+    - binary_col (str): Name of the binary categorical column (e.g., 'is_fraud').
+    - numeric_col (str): Name of the numeric column to visualize.
+    - title (str, optional): Optional title for the plot. Defaults to None, generates a default title.
+    - palette (str, optional): Color palette for the violin plot. Defaults to 'pastel'.
+    - x_labels (list, optional): Custom labels for x-axis ticks (list of two strings).
+                                 Defaults to None. If None and binary_col is 0/1,
+                                 defaults to ['Not Fraud', 'Fraud'].
+    - show_quartiles (bool, optional): Whether to show quartile lines inside violins.
+                                       If False, shows a default box plot. Defaults to True.
     """
-    # Figure size
-    plt.figure(figsize=(10, 8))
-    # Create the violin plot
-    sns.violinplot(
+    plt.figure(figsize=(10, 6))
+
+    # Create violin plot with improved formatting
+    ax = sns.violinplot(
         x=binary_col,
         y=numeric_col,
         data=data,
         hue=binary_col,
         palette=palette,
-        legend=False
+        legend=False,
+        # inner='quartile' if show_quartiles else 'box',
+        cut=0
     )
 
-    # Use smart labels
+    # Format labels
     xlabel = binary_col.replace("_", " ").title()
     ylabel = numeric_col.replace("_", " ").title()
 
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
+    plt.xlabel(xlabel, fontsize=12)
+    plt.ylabel(ylabel, fontsize=12)
 
-    if title:
-        plt.title(title)
-    else:
-        plt.title(f'Distribution of {ylabel} by {xlabel}')
+    # Set title
+    if not title:
+        title = f'Distribution of {ylabel} by {xlabel}'
+    plt.title(title, fontsize=14, pad=15)
 
-    # Customize x-axis labels for common binary case
-    if data[binary_col].nunique() == 2 and sorted(data[binary_col].unique()) == [0, 1]:
-        plt.xticks([0, 1], ['Not Fraud', 'Fraud'])
+    # Custom x-axis labels
+    if x_labels:
+        ax.set_xticks(range(len(x_labels))) # Explicitly set tick locations
+        ax.set_xticklabels(x_labels)
+    elif data[binary_col].nunique() == 2 and sorted(data[binary_col].unique()) == [0, 1]:
+        # For binary 0/1, ticks are typically at 0 and 1
+        ax.set_xticks([0, 1]) # Explicitly set tick locations for 0 and 1
+        ax.set_xticklabels(['Not Fraud', 'Fraud'])
 
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    
+    # Improve grid and layout
+    plt.grid(axis='y', linestyle='--', alpha=0.3)
+    plt.gcf().set_facecolor('#f8f9fa')
+    sns.despine(left=True)
+
+    # Add data count annotation (updated placement logic)
+    min_y, max_y = ax.get_ylim()
+    y_text_position = min_y + (max_y - min_y) * 0.01
+
+    for i, category in enumerate(data[binary_col].unique()):
+        count = (data[binary_col] == category).sum()
+        ax.text(i, y_text_position, f'n={count:,}',
+                ha='center', va='bottom', fontsize=9, color='dimgray')
+
     plt.tight_layout()
     plt.show()
+
+
+
+# def plot_violin_by_binary_category(data, binary_col, numeric_col, title=None, palette='pastel'):
+#     """
+#     Plots a violin plot showing the distribution of a numerical variable 
+#     by a binary categorical variable (e.g., 0/1 or 'No'/'Yes').
+
+#     Parameters:
+#     - df: DataFrame containing the data
+#     - binary_col: Name of the binary categorical column (e.g., 'is_fraud')
+#     - numeric_col: Name of the numeric column to visualize
+#     - title: Optional title for the plot
+#     - palette: Color palette for the violin plot
+#     """
+#     # Figure size
+#     plt.figure(figsize=(10, 8))
+#     # Create the violin plot
+#     sns.violinplot(
+#         x=binary_col,
+#         y=numeric_col,
+#         data=data,
+#         hue=binary_col,
+#         palette=palette,
+#         legend=False
+#     )
+
+#     # Use smart labels
+#     xlabel = binary_col.replace("_", " ").title()
+#     ylabel = numeric_col.replace("_", " ").title()
+
+#     plt.xlabel(xlabel)
+#     plt.ylabel(ylabel)
+
+#     if title:
+#         plt.title(title)
+#     else:
+#         plt.title(f'Distribution of {ylabel} by {xlabel}')
+
+#     # Customize x-axis labels for common binary case
+#     if data[binary_col].nunique() == 2 and sorted(data[binary_col].unique()) == [0, 1]:
+#         plt.xticks([0, 1], ['Not Fraud', 'Fraud'])
+
+#     plt.grid(axis='y', linestyle='--', alpha=0.7)
+#     plt.tight_layout()
+#     plt.show()
