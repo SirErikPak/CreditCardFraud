@@ -190,6 +190,7 @@ def plot_distribution(data, x_col, hue_col, log_scale=True, bins=50):
     plt.show()
 
 
+
 def plot_violin_by_binary_category(data, binary_col, numeric_col, title=None, palette='pastel'):
     """
     Plots a violin plot showing the distribution of a numerical variable 
