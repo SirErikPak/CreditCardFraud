@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 # plot feature correlation with target variable
 def plot_feature_correlation(data, numerical_cols, target_col):
     """
@@ -185,5 +186,50 @@ def plot_distribution(data, x_col, hue_col, log_scale=True, bins=50):
     axes[1].set_ylabel('Density')
     axes[1].grid(True)
 
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_violin_by_binary_category(data, binary_col, numeric_col, title=None, palette='pastel'):
+    """
+    Plots a violin plot showing the distribution of a numerical variable 
+    by a binary categorical variable (e.g., 0/1 or 'No'/'Yes').
+
+    Parameters:
+    - df: DataFrame containing the data
+    - binary_col: Name of the binary categorical column (e.g., 'is_fraud')
+    - numeric_col: Name of the numeric column to visualize
+    - title: Optional title for the plot
+    - palette: Color palette for the violin plot
+    """
+    # Figure size
+    plt.figure(figsize=(10, 8))
+    # Create the violin plot
+    sns.violinplot(
+        x=binary_col,
+        y=numeric_col,
+        data=data,
+        hue=binary_col,
+        palette=palette,
+        legend=False
+    )
+
+    # Use smart labels
+    xlabel = binary_col.replace("_", " ").title()
+    ylabel = numeric_col.replace("_", " ").title()
+
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+
+    if title:
+        plt.title(title)
+    else:
+        plt.title(f'Distribution of {ylabel} by {xlabel}')
+
+    # Customize x-axis labels for common binary case
+    if data[binary_col].nunique() == 2 and sorted(data[binary_col].unique()) == [0, 1]:
+        plt.xticks([0, 1], ['Not Fraud', 'Fraud'])
+
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
     plt.show()
