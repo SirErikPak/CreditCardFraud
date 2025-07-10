@@ -20,4 +20,4 @@ What I did was generate transactions across all profiles and then merged them to
 
 ## Acknowledgements
 
-Brandon Harris for his amazing work in creating this easy-to-use simulation tool for creating fraud transaction datasets. 
+Brandon Harris for his amazing work in creating this easy-to-use simulation tool for creating fraud transaction datasets.
