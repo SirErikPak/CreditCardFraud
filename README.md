@@ -24,7 +24,7 @@ Brandon Harris for his amazing work in creating this easy-to-use simulation tool
 
 ## Feature Engineering
 
-Extracting Time-Based Features:
+**Extracting Time-Based Features:**
 
 - Quarter of the Year (trans_qtr): The numerical quarter (1-4) in which the transaction occurred.
 - Month of the Year (trans_month): The numerical month (1-12) of the transaction.
