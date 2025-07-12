@@ -125,4 +125,4 @@ Given these distinct vulnerabilities, age-specific fraud prevention strategies a
 
 ## Amount (Log)
 
-![Alt text](Image/Amount_Distribution_log.png)
+![Alt text](Image/Amount_Distribution_Log.png)
