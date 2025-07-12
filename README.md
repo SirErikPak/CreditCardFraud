@@ -110,3 +110,22 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 ### Conclusion
 
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
+
+#### Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
+
+- Based on the data, age does not appear to have a significant effect on the likelihood of a transaction being fraudulent.
+- The distribution of fraudulent versus non-fraudulent transactions across age groups is relatively uniform, with no strong evidence of concentration or deviation in fraud risk associated with specific age ranges.
+- Contingency Table Overview after Discretization
+  - Rows: Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
+- Expected vs. Observed
+  - There are visible differences between observed and expected counts, especially in the fraud (1) column.
+- Conclusion
+  - P-value < 0.05: Strong evidence to reject the null hypothesis. There is a statistically significant association between age group and fraud occurrence in the data. likelihood of fraud differs by age group.
+    - Younger (20-36) and older (53-100) age groups have slightly higher fraud percentages.
+    - Middle age groups (36-44, 44-53) show lower fraud rates.
+    - There is a significant relationship between age group and fraud status. Age appears to influence the likelihood of fraud, so age-specific monitoring or interventions could be considered.
+- Why Might Younger and Older Age Groups Be More Prone to Fraud?
+  - Younger Age Groups (20–36) Younger adults may have less experience recognizing scams or fraudulent activities and tyhey tend to use more online platforms, increasing exposure to digital fraud. Younger people may be more likely to take risks or try new financial products/services without thorough vetting. They may not have developed strong habits for verifying information or protecting personal data.
+  - Older Age Groups (53–100) Possible cognitive decline or slower reaction times can make it harder to spot scams and older adults may be more trusting, especially of authority figures or official-looking communications. Social isolation can make older adults more susceptible to scams that exploit loneliness inclduing less familiarity with digital technology can make it harder to recognize phishing or online fraud.
+
+Research shows that both younger and older adults are at higher risk for fraud, but for different reasons. Younger adults tend to fall for scams more frequently, often due to less experience and a greater willingness to take risks. In comparison, older adults typically lose more money per scam, likely because of reduced vigilance and lower digital literacy. Studies highlight that both financial and digital literacy are critical protective factors against fraud. Therefore, fraud prevention efforts should be tailored: younger adults benefit from education about common scam tactics, while older adults need support systems, trusted contacts, and easy ways to report suspicious activity.
