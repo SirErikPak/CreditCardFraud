@@ -69,39 +69,39 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 - E.g., 22:00 and 23:00 account for over 50% of fraud despite being only ~5% of non-fraud transactions.
 - Daytime (04:00–21:00) sees relatively less fraud.
 
-2. **Day of Week**
+1. **Day of Week**
 
 - Thursday and Friday have higher fraud rates than expected.
 - Sunday and Monday show lower fraud rates relative to their total transaction volumes.
 - Saturday’s fraud rate is roughly proportional to its transaction volume.
 
-3. **Month**
+1. **Month**
 
 - Fraud rates vary significantly across months.
 - Higher fraud: January, February, March, May.
 - Lower fraud: December, July, April, November.
 - Suggests seasonal patterns or event-driven fraud trends.
 
-4. **Transaction Category**
+1. **Transaction Category**
 
 - Certain categories show elevated fraud risk:
 - High-risk: grocery_pos, shopping_net, misc_net.
 - Low-risk: entertainment, food_dining, health_fitness, home, travel.
 - These patterns support targeted fraud prevention by category.
 
-5. **Industry**
+1. **Industry**
 
 - Non-uniform fraud distribution across industries.
 - Slightly elevated fraud in: Airlines, Banking/Financial sectors (e.g., Mastercard).
 - Proportional or lower fraud in: Visa, Amex, Diners Club.
 
-6. **Credit Card Network**
+1. **Credit Card Network**
 
 - JCB and Maestro show slightly higher fraud representation.
 - Diners Club shows lower fraud involvement.
 - These differences, while small, are statistically significant due to the large dataset.
 
-7. **Gender**
+1. **Gender**
 
 - Females: More overall transactions, slightly underrepresented in fraud.
 - Males: Fewer transactions, slightly overrepresented in fraud.
@@ -109,7 +109,7 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
 
-#### Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
+### Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
 
 Research shows that both younger and older adults are at higher risk for fraud, but for different reasons. Younger adults tend to fall for scams more frequently, often due to less experience and a greater willingness to take risks. In comparison, older adults typically lose more money per scam, likely because of reduced vigilance and lower digital literacy. Studies highlight that both financial and digital literacy are critical protective factors against fraud. Therefore, fraud prevention efforts should be tailored: younger adults benefit from education about common scam tactics, while older adults need support systems, trusted contacts, and easy ways to report suspicious activity.
 
