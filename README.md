@@ -64,48 +64,48 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 
 1. **Time of Day**
 
-- A significant association exists between transaction hours and fraud.
-- Late-night hours (22:00–03:00) show disproportionately high fraud rates.
-- E.g., 22:00 and 23:00 account for over 50% of fraud despite being only ~5% of non-fraud transactions.
-- Daytime (04:00–21:00) sees relatively less fraud.
+    - A significant association exists between transaction hours and fraud.
+    - Late-night hours (22:00–03:00) show disproportionately high fraud rates.
+    - E.g., 22:00 and 23:00 account for over 50% of fraud despite being only ~5% of non-fraud transactions.
+    - Daytime (04:00–21:00) sees relatively less fraud.
 
 1. **Day of Week**
 
-- Thursday and Friday have higher fraud rates than expected.
-- Sunday and Monday show lower fraud rates relative to their total transaction volumes.
-- Saturday’s fraud rate is roughly proportional to its transaction volume.
+    - Thursday and Friday have higher fraud rates than expected.
+    - Sunday and Monday show lower fraud rates relative to their total transaction volumes.
+    - Saturday’s fraud rate is roughly proportional to its transaction volume.
 
 1. **Month**
 
-- Fraud rates vary significantly across months.
-- Higher fraud: January, February, March, May.
-- Lower fraud: December, July, April, November.
-- Suggests seasonal patterns or event-driven fraud trends.
+    - Fraud rates vary significantly across months.
+    - Higher fraud: January, February, March, May.
+    - Lower fraud: December, July, April, November.
+    - Suggests seasonal patterns or event-driven fraud trends.
 
 1. **Transaction Category**
 
-- Certain categories show elevated fraud risk:
-- High-risk: grocery_pos, shopping_net, misc_net.
-- Low-risk: entertainment, food_dining, health_fitness, home, travel.
-- These patterns support targeted fraud prevention by category.
+    - Certain categories show elevated fraud risk:
+    - High-risk: grocery_pos, shopping_net, misc_net.
+    - Low-risk: entertainment, food_dining, health_fitness, home, travel.
+    - These patterns support targeted fraud prevention by category.
 
 1. **Industry**
 
-- Non-uniform fraud distribution across industries.
-- Slightly elevated fraud in: Airlines, Banking/Financial sectors (e.g., Mastercard).
-- Proportional or lower fraud in: Visa, Amex, Diners Club.
+    - Non-uniform fraud distribution across industries.
+    - Slightly elevated fraud in: Airlines, Banking/Financial sectors (e.g., Mastercard).
+    - Proportional or lower fraud in: Visa, Amex, Diners Club.
 
 1. **Credit Card Network**
 
-- JCB and Maestro show slightly higher fraud representation.
-- Diners Club shows lower fraud involvement.
-- These differences, while small, are statistically significant due to the large dataset.
+    - JCB and Maestro show slightly higher fraud representation.
+    - Diners Club shows lower fraud involvement.
+    - These differences, while small, are statistically significant due to the large dataset.
 
 1. **Gender**
 
-- Females: More overall transactions, slightly underrepresented in fraud.
-- Males: Fewer transactions, slightly overrepresented in fraud.
-- Gender is a statistically relevant variable, though differences are subtle.
+    - Females: More overall transactions, slightly underrepresented in fraud.
+    - Males: Fewer transactions, slightly overrepresented in fraud.
+    - Gender is a statistically relevant variable, though differences are subtle.
 
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
 
