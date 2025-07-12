@@ -75,7 +75,7 @@ def plot_violin_by_binary_category(data, binary_col, numeric_col, title = None, 
 
 
 
-def plot_distribution(data, x_col, hue_col, log_scale=True, bins=50):
+def plot_distribution(data, x_col, hue_col, save_path= None, dpi=600, log_scale=True, bins=50):
     """
     Generates side-by-side plots (histogram and KDE) showing the distribution of
     transaction amounts by fraud status on a log scale.
@@ -132,4 +132,11 @@ def plot_distribution(data, x_col, hue_col, log_scale=True, bins=50):
     axes[1].grid(True)
 
     plt.tight_layout()
+
+        # Save the plot if save_path is provided
+    if save_path:
+        plt.savefig(save_path, dpi=dpi) # Added dpi argument here
+        print(f"Plot saved to {save_path} with {dpi} DPI.")
+
+
     plt.show()

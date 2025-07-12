@@ -109,7 +109,9 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
 
-### Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
+![Alt text](Image/Age_Distribution.png)
+
+## Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
 
 Research shows that both younger and older adults are at higher risk for fraud, but for different reasons. Younger adults tend to fall for scams more frequently, often due to less experience and a greater willingness to take risks. In comparison, older adults typically lose more money per scam, likely because of reduced vigilance and lower digital literacy. Studies highlight that both financial and digital literacy are critical protective factors against fraud. Therefore, fraud prevention efforts should be tailored: younger adults benefit from education about common scam tactics, while older adults need support systems, trusted contacts, and easy ways to report suspicious activity.
 
