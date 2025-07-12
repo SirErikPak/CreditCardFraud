@@ -107,8 +107,6 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 - Males: Fewer transactions, slightly overrepresented in fraud.
 - Gender is a statistically relevant variable, though differences are subtle.
 
-### Conclusion
-
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
 
 #### Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
