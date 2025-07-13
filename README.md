@@ -114,6 +114,22 @@ Chi-Square tests reveal strong associations between fraud and several variables�
 ![Alt text](Image/Age_Distribution.png)
 ![Alt text](Image/Mean_Fraud_Amount_by_Age_Group_and_Transaction_Hour.png)
 
+## Key Insights and Patterns
+
+1. **Overall Trend by Hour**
+    - For most age groups, the mean fraudulent transaction amounts tend to be lower during the day (roughly 06:00 to 17:00).
+    - There's a noticeable increase in mean fraudulent transaction amounts during the late evening and early morning hours (roughly 18:00 to 05:00) across most age groups. This aligns with common fraud patterns where criminals might exploit less active monitoring or different behavioral patterns during off-peak hours.
+1. **Age Group-Specific Patterns**
+    - Age Group(20-36) and Age Group(36-44): These groups show a general trend of moderate mean fraud amounts during the day (e.g., $300-$500 range) and higher amounts in the late evening/early morning (e.g., reaching up to $885 for 20-36 at hour 20, and $681 for 36-44 at hour 19).
+    - Age Group(44-53): This group also shows the day/night pattern but with slightly more varied amounts. Some specific daytime hours (e.g., hour 7 at $553) can have higher means.
+    - Age Group(53-66) and Age Group(66-100): These older age groups exhibit a particularly pronounced pattern:
+    - Their daytime mean fraudulent amounts are notably lower (often in the $100-$300 range, sometimes even lower, like $126 at hour 7 for 66-100).
+    - However, their late evening/early morning mean fraudulent amounts surge dramatically, often reaching the $600 - $800+ range. For example, 'Age Group(66-100)' peaks around $802 at hour 21, and 'Age Group(53-66)' reaches $797 at hour 20. This indicates that while they might experience less fraud or lower-value fraud during the day, they are susceptible to very high-value fraud during specific nocturnal hours.
+1. **Specific High-Risk Pairings**
+    - Age Group(20-36) around 20:00 (8 PM): Mean fraud amount of $885.22.
+    - Age Group(53-66) around 20:00 (8 PM) - 22:00 (10 PM): Mean fraud amounts of $797.23 (hour 20), $788.07(hour 21), and $711.48 (hour 22).
+    - Age Group(66-100) around 21:00 (9 PM): Mean fraud amount of $802.60.
+
 ## Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
 
 Research shows that both younger and older adults are at higher risk for fraud, but for different reasons. Younger adults tend to fall for scams more frequently, often due to less experience and a greater willingness to take risks. In comparison, older adults typically lose more money per scam, likely because of reduced vigilance and lower digital literacy. Studies highlight that both financial and digital literacy are critical protective factors against fraud. Therefore, fraud prevention efforts should be tailored: younger adults benefit from education about common scam tactics, while older adults need support systems, trusted contacts, and easy ways to report suspicious activity.
