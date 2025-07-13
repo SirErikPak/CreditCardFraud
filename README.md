@@ -109,9 +109,8 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
 
-## Age
+## Fruad By Age Group and transaction Hour
 
-![Alt text](Image/Age_Distribution.png)
 ![Alt text](Image/Mean_Fraud_Amount_by_Age_Group_and_Transaction_Hour.png)
 
 ## Key Insights and Patterns
