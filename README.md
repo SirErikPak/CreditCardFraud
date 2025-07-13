@@ -127,7 +127,7 @@ Given these distinct vulnerabilities, age-specific fraud prevention strategies a
 
 ![Alt text](Image/Amount_Distribution_Log.png)
 
-While fraudulent transactions span all amounts, there's a clear indication that fraud density increases with higher transaction amounts. This suggests that larger transactions warrant closer scrutiny. Therefore, it would be beneficial to implement tiered fraud monitoring thresholds, mainly focusing on high-value transactions during peak fraud hours (e.g., 10 PM to 3 AM).
+While fraudulent transactions span all amounts, there's a clear indication that fraud density increases with higher transaction amounts. This suggests that larger transactions warrant closer scrutiny.
 
 ## Mean Fraud Amount by Category and CC_Network
 
