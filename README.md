@@ -141,11 +141,11 @@ While fraudulent transactions span all amounts, there's a clear indication thatÂ
 
 ### Lowest Mean Fraud Amounts
 
-- `gas_transport` and `grocery_net` (Online Grocery) consistently have very low mean fraudulent amounts, generally ranging from $11 to $13. This suggests that while fraud might occur in these categories, it typically involves smaller sums.
-- `travel` also shows very low mean fraudulent amounts (around $8 - $10), which might be counter-intuitive as travel transactions can be expensive. This could indicate that while there might be many fraudulent travel transactions, their individual values are low, perhaps due to specific types of small-ticket travel fraud.
+- `gas_transport` and `grocery_net` (Online Grocery) consistently have very low mean fraudulent amounts, which suggests that while fraud might occur in these categories, it typically involves smaller sums.
+- `travel` also shows very low mean fraudulent amounts, which might be counter-intuitive as travel transactions can be expensive. This could indicate that while there might be many fraudulent travel transactions, their individual values are low, perhaps due to specific types of small-ticket travel fraud.
 
 ### Variability within Categories (Interaction Effect in action)
 
 - For categories like `misc_pos` (Miscellaneous Point-of-Sale), you can see significant variation across card networks. For instance, `American Express` has a mean of nearly $40, while `Maestro` is about $400, and `JCB` is bit over $200. This is a clear example of the interaction effect; the mean fraudulent amount for `misc_pos` depends heavily on the `cc_network` used, and this combination could be "high-risk pairing".
-- `entertainment`, `food_dining`, `home`, `health_fitness`, `kids_pets`, `personal_care`, `shopping_pos` show relatively less variation across networks within their respective categories, though minor differences exist. For example, in `entertainment`, values range from approximately $480 to $540, a tighter range than `misc_pos`.
+- `entertainment`, `food_dining`, `home`, `health_fitness`, `kids_pets`, `personal_care`, `shopping_pos` show relatively less variation across networks within their respective categories, though minor differences exist. For example, in `entertainment`, values range from approximately $490 to $540, a tighter range than `misc_pos`.
 
