@@ -109,7 +109,13 @@ A new feature age is calculated based on the dob (date of birth) column and the 
 
 Chi-Square tests reveal strong associations between fraud and several variables—hour, day, month, category, industry, network, and gender—providing valuable insights for fraud detection models and risk-based strategies.
 
-## Fraud By Age Group and Transaction Hour
+## Amount (Log)
+
+![Alt text](Image/Amount_Distribution_Log.png)
+
+While fraudulent transactions span all amounts, there's a clear indication that fraud density increases with higher transaction amounts. This suggests that larger transactions warrant closer scrutiny.
+
+## Mean Fraudulent Transaction Amount By Age Group and Transaction Hour
 
 ![Alt text](Image/Mean_Fraud_Amount_by_Age_Group_and_Transaction_Hour.png)
 
@@ -138,12 +144,6 @@ The pattern aligns with broader research on fraud vulnerability. Younger adults
 
 **Tailored Fraud Prevention is Key:**
 Given these distinct vulnerabilities, age-specific fraud prevention strategies are essential. For younger demographics, the focus should be on education about common scam tactics and promoting strong digital and financial literacy. For older adults, prevention efforts should include establishing support systems with trusted contacts, making reporting suspicious activity easy, and providing resources to enhance digital literacy. By understanding and addressing the unique risks associated with different age groups, fraud prevention efforts can be significantly more effective.
-
-## Amount (Log)
-
-![Alt text](Image/Amount_Distribution_Log.png)
-
-While fraudulent transactions span all amounts, there's a clear indication that fraud density increases with higher transaction amounts. This suggests that larger transactions warrant closer scrutiny.
 
 ## Mean Fraud Amount by Category and CC_Network
 
