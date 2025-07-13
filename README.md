@@ -126,3 +126,26 @@ Given these distinct vulnerabilities, age-specific fraud prevention strategies a
 ## Amount (Log)
 
 ![Alt text](Image/Amount_Distribution_Log.png)
+
+While fraudulent transactions span all amounts, there's a clear indication that fraud density increases with higher transaction amounts. This suggests that larger transactions warrant closer scrutiny. Therefore, it would be beneficial to implement tiered fraud monitoring thresholds, mainly focusing on high-value transactions during peak fraud hours (e.g., 10 PM to 3 AM).
+
+## Mean Fraud Amount by Category and CC_Network
+
+![Alt text](Image/Mean_Fraud_Amount_by_Category_and_CC_Network.png)
+
+
+### Highest Mean Fraud Amounts (Overall)
+
+- `shopping_net` (Online Shopping) consistently shows the highest mean fraudulent transaction amounts, often around $1000 across most card networks. This indicates that when fraud occurs in online shopping, it tends to involve large sums.
+- `misc_net` (Miscellaneous Online) is also very high, with mean fraudulent amounts consistently around $800.
+
+### Lowest Mean Fraud Amounts
+
+- `gas_transport` and `grocery_net` (Online Grocery) consistently have very low mean fraudulent amounts, generally ranging from $11 to $13. This suggests that while fraud might occur in these categories, it typically involves smaller sums.
+- `travel` also shows very low mean fraudulent amounts (around $8 - $10), which might be counter-intuitive as travel transactions can be expensive. This could indicate that while there might be many fraudulent travel transactions, their individual values are low, perhaps due to specific types of small-ticket travel fraud.
+
+### Variability within Categories (Interaction Effect in action)
+
+- For categories like `misc_pos` (Miscellaneous Point-of-Sale), you can see significant variation across card networks. For instance, `American Express` has a mean of nearly $40, while `Maestro` is about $400, and `JCB` is bit over $200. This is a clear example of the interaction effect; the mean fraudulent amount for `misc_pos` depends heavily on the `cc_network` used, and this combination could be "high-risk pairing".
+- `entertainment`, `food_dining`, `home`, `health_fitness`, `kids_pets`, `personal_care`, `shopping_pos` show relatively less variation across networks within their respective categories, though minor differences exist. For example, in `entertainment`, values range from approximately $480 to $540, a tighter range than `misc_pos`.
+
