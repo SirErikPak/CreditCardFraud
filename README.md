@@ -112,6 +112,7 @@ Chi-Square tests reveal strong associations between fraud and several variablesâ
 ## Age
 
 ![Alt text](Image/Age_Distribution.png)
+![Alt text](Image/Mean_Fraud_Amount_by_Age_Group_and_Transaction_Hour.png)
 
 ## Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
 
@@ -133,7 +134,6 @@ While fraudulent transactions span all amounts, there's a clear indication thatÂ
 
 ![Alt text](Image/Mean_Fraud_Amount_by_Category_and_CC_Network.png)
 
-
 ### Highest Mean Fraud Amounts (Overall)
 
 - `shopping_net` (Online Shopping) consistently shows the highest mean fraudulent transaction amounts, often around $1000 across most card networks. This indicates that when fraud occurs in online shopping, it tends to involve large sums.
@@ -148,4 +148,3 @@ While fraudulent transactions span all amounts, there's a clear indication thatÂ
 
 - For categories like `misc_pos` (Miscellaneous Point-of-Sale), you can see significant variation across card networks. For instance, `American Express` has a mean of nearly $40, while `Maestro` is about $400, and `JCB` is bit over $200. This is a clear example of the interaction effect; the mean fraudulent amount for `misc_pos` depends heavily on the `cc_network` used, and this combination could be "high-risk pairing".
 - `entertainment`, `food_dining`, `home`, `health_fitness`, `kids_pets`, `personal_care`, `shopping_pos` show relatively less variation across networks within their respective categories, though minor differences exist. For example, in `entertainment`, values range from approximately $490 to $540, a tighter range than `misc_pos`.
-
