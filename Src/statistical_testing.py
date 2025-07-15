@@ -95,4 +95,7 @@ def discretization(data, feature, newFeature, qcut, labelTxt):
     # replace NaN with 'Unknown'
     data[newFeature] = data[newFeature].cat.add_categories('Unknown').fillna('Unknown')
 
+    # Remove any categories that do not have any observations after discretization and NaN handling.
+    data[newFeature] = data[newFeature].cat.remove_unused_categories()
+
     return data
