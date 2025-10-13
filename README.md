@@ -137,7 +137,7 @@ While fraudulent transactions span all amounts, there's a clear indication that�
     - Age Group(53-66) around 20:00 (8 PM) - 22:00 (10 PM): Mean fraud amounts of $797.23 (hour 20), $788.07(hour 21), and $711.48 (hour 22).
     - Age Group(66-100) around 21:00 (9 PM): Mean fraud amount of $802.60.
 
-## Discretization Age groups (20-36, 36-44, 44-53, 53-66, 66-100)
+## Discretization Age groups
 
 Research shows that both younger and older adults are at higher risk for fraud, but for different reasons. Younger adults tend to fall for scams more frequently, often due to less experience and a greater willingness to take risks. In comparison, older adults typically lose more money per scam, likely because of reduced vigilance and lower digital literacy. Studies highlight that both financial and digital literacy are critical protective factors against fraud. Therefore, fraud prevention efforts should be tailored: younger adults benefit from education about common scam tactics, while older adults need support systems, trusted contacts, and easy ways to report suspicious activity.
 
