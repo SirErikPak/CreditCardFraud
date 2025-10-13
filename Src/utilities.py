@@ -1,55 +1,6 @@
-# Calculate the geodesic distance between two latitude/longitude coordinate pairs.
-from geopy.distance import geodesic
+# Imports
 import re
 import numpy as np
-
-
-def haversine_distance_calc(lat1, lon1, lat2, lon2, units="mi"):
-    """
-    Vectorized calculation of great-circle distance between two points using the Haversine formula.
-    Inputs can be floats or NumPy arrays.
-    """
-    R_km = 6371.0088
-    R_mi = 3958.7613
-
-    lat1 = np.radians(lat1)
-    lon1 = np.radians(lon1)
-    lat2 = np.radians(lat2)
-    lon2 = np.radians(lon2)
-
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-
-    a = np.sin(dlat / 2.0) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2.0) ** 2
-    c = 2 * np.arcsin(np.sqrt(a))
-
-    # Choose the radius based on the units
-    R = R_mi if units == "mi" else R_km
-
-    # Calculate the distance
-    return R * c
-
-
-def calculate_distance(coord1, coord2, units="mi"):
-    """
-    Calculates the geodesic distance between two latitude/longitude coordinate pairs.
-    (Only Used for small datasets)
-
-    Parameters:
-    - coord1: tuple of (latitude, longitude)
-    - coord2: tuple of (latitude, longitude)
-    - units: "km" for kilometers (default), "mi" for miles
-
-    Returns:
-    - distance: float, the distance in the specified units
-    """
-    if units == "km":
-        return geodesic(coord1, coord2).km
-    elif units == "mi":
-        return geodesic(coord1, coord2).miles
-    else:
-        raise ValueError("Units must be 'km' or 'mi'")
-    
 
 
 def map_first_digit_to_value(input_string, mapping_dict, default_value="Unknown"):
@@ -66,16 +17,20 @@ def map_first_digit_to_value(input_string, mapping_dict, default_value="Unknown"
     Returns:
         any: The mapped value or the default_value if no match is found.
     """
+    # Cast to string and strip whitespace
+    input_string = str(input_string).strip()
+
+    # ADD THIS CHECK: If the string is empty AFTER stripping, return the default value
     if not input_string:
-        return default_value # Handle empty string case
+        return default_value
     
-    input_string = str(input_string).strip()  # Ensure input is a string and remove leading/trailing whitespace
+    # The original check 'if not input_string:' is no longer needed at the top,
+    # as the two lines above now cover both empty and space-only inputs robustly.
 
-    first_digit = input_string[0] # Get the first character (digit) of the string
-
+    first_digit = input_string[0] # This line is now safe
+    
     return mapping_dict.get(first_digit, default_value)
-
-
+   
 
 def get_credit_card_network(card_number):
     """

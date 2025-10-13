@@ -72,14 +72,15 @@ def gaussian_mixture_binning(data, colum_list, seed, n_init=10):
         bic.append(gmm.bic(data[colum_list]))
     
     # plot AIC and BIC to find the optimal number of components
-    plt.plot(components_range, aic, label='AIC')
-    plt.plot(components_range, bic, label='BIC')
+    plt.figure(figsize=(8,5))
+    plt.plot(components_range, aic, label='AIC', marker='o')
+    plt.plot(components_range, bic, label='BIC', marker='o')
     plt.xlabel('Number of Components')
-    plt.ylabel('AIC/BIC')
-    plt.legend()
+    plt.ylabel('AIC / BIC')
     plt.title('AIC and BIC for GMM')
+    plt.legend()
+    plt.grid(True)
     plt.show()
-
 
 
 def discretization(data, feature, newFeature, qcut, labelTxt):

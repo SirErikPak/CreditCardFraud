@@ -18,6 +18,8 @@ After this, depending on the profile you choose for e.g. "adults 2550 female rur
 
 What I did was generate transactions across all profiles and then merged them together to create a more realistic representation of simulated transactions.
 
+[Dataset Link](https://www.kaggle.com/datasets/kartik2112/fraud-detection/data)
+
 ## Acknowledgements
 
 Brandon Harris for his amazing work in creating this easy-to-use simulation tool for creating fraud transaction datasets. -->
